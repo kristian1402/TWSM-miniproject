@@ -1,33 +1,76 @@
+/*----Globals----*/
+body, html {
+  margin: 1rem;
+  background-color: pink;
+}
+
+/*----Text----*/
+.text {
+  text-align: center;
+  width:600px;
+  margin:50px auto;
+  height:90px;
+  position:relative;
+  color:#000000;
+  text-shadow:rgba(0,0,0,0.1) 2px 2px 0px;
+  font-family: sans-serif;  
+}
+
+a{
+  text-decoration:none; /*Removes blue line under href links*/
+}
+
+/*----Images----*/
 .grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
-    margin: 0 0 1rem 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  margin: 0 0 1rem 0;
 
-  }
+}
   
-  .grid > div {
-    height: 350px;
+.grid > div {
+  height: 350px;
+}
 
-  }
-  
-  body {
-    margin: 1rem;
-  }
-
-  .portrait {
-    height: 80px;
-    width: 30px;
+.portrait {
+  height: 80px;
+  width: 30px;
 }
 
 .img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.2s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.2s ease-in-out;
 }
 
 .img img:hover {
-    transform: translateY(-5px);
-  }
+  transform: translateY(-5px);
+}
+
+/*----Text overlay----*/
+.overlay{
+  position: relative;
+  top: -101%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s, transform 0.2s ease-in-out;
+}
+
+.img:hover .overlay {
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(-5px);
+  overflow:visible;
+  pointer-events:none;
+}
