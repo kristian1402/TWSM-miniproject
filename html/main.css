@@ -1,3 +1,22 @@
+/*----Globals----*/
+body, html {
+  margin: 1rem;
+  background-color: pink;
+}
+
+/*----Text----*/
+.text {
+  text-align: center;
+  width:600px;
+  margin:50px auto;
+  height:90px;
+  position:relative;
+  color:#000000;
+  text-shadow:rgba(0,0,0,0.1) 2px 2px 0px;
+  font-family: sans-serif;  
+}
+
+/*----Images----*/
 .grid {
     display: grid;
     gap: 1rem;
@@ -10,12 +29,8 @@
     height: 350px;
 
   }
-  
-  body {
-    margin: 1rem;
-  }
 
-  .portrait {
+.portrait {
     height: 80px;
     width: 30px;
 }
@@ -30,4 +45,4 @@
 
 .img img:hover {
     transform: translateY(-5px);
-  }
+}
