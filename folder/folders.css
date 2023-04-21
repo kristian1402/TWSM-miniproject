@@ -1,5 +1,6 @@
 body {
     font-family: "Lato", sans-serif;
+    text-align: center;
   }
   
   /* Fixed sidenav, full height */
@@ -16,7 +17,7 @@ body {
   }
   
   /* Style the sidenav links and the dropdown button */
-  .sidenav a, .dropdown-btn {
+  .sidenav a, .dropdown-btn, button {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
