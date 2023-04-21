@@ -15,14 +15,14 @@
 
 <div class="sidenav" id="sidenav">
   <a href="/html/main.html" class="dropdown-btn">Menu</a>
+  <form>
+  </form>
   <button class="dropdown-btn">Test 1</button>
-  <div class="dropdown-container">
-    <button class="dropdown-btn" onclick="loadDoc('image2.txt')"></button>
-    <a href="#">Participant 2</a>
-    <a href="#">Participant 3</a>
-    <a href="#">Participant 4</a>
-  </div>
 </div>
+
+<input type="text" size="15" onkeyup="showResult(this.value)" placeholder="Search">
+<div id="livesearch"></div>
+
 <script>
   var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
