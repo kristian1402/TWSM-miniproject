@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="da-DK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://jysk.dk/themes/custom/jysk_bootstrap/favicon.ico">
+  <title>Crack the code at JYSK</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      color: #333;
+      background: #fff;
+      width: 100%;
+    }
+    section#content {
+      margin: 20px auto;
+      width: 600px;
+      max-width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <section id="content" role="main">
+    <h1>Crack the code at JYSK</h1>
+    <p>Find 5 errors and tell us the passphrase.</p>
+    <button id="showPassPhrase">Hit me!</button>
+  </section>
+  <script>
+    document.getElementById('showPassPhrase').onclick = function() {
+      let p = 'G';
+      let dne = 'wa';
+      p += document.title.charAt(13);
+      p += document.getElementsByTagName('h1')[0].innerText.charAt(12) + document.getElementsByTagName('p')[0].innerText.charAt(5);
+      p += dne.split("").reverse().join("");
+      alert(p);
+    }
+  </script>
+</body>
+</html>

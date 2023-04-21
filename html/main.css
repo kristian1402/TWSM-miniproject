@@ -1,4 +1,33 @@
-div.text{
-    color: blue;
-    font-size: 200%;
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    margin: 0 0 1rem 0;
+
+  }
+  
+  .grid > div {
+    height: 350px;
+
+  }
+  
+  body {
+    margin: 1rem;
+  }
+
+  .portrait {
+    height: 80px;
+    width: 30px;
 }
+
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.img img:hover {
+    transform: translateY(-5px);
+  }
