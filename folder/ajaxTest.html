@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>VR Heatmaps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="folders.css">
+  <script src="folder.js"></script>
+  </head>
 <body>
 
-<div id="demo">
-<h1>Deez nuts</h1>
-<button type="button" onclick="loadDoc()">Change Content</button>
-</div>
+  <div id="showHeatmap">
+    <h2>Heatmap</h2>
+    <img src="" alt="">
+    <p>my name jeff</p>
+  </div>
 
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "ajax_info.txt", true);
-  xhttp.send();
-}
-</script>
+<div class="sidenav" id="sidenav">
+  <form>
+    <input type="text" size="15" onkeyup="showResult(this.value)" placeholder="Search">
+<div class="livesearch" id="livesearch"></div>
+  </form>
+  <a href="/html/main.html" class="dropdown-btn">Menu</a>
+  <a href="ajaxTest.html" class="dropdown-btn">Test 1</a>
+</div>
 
 </body>
 </html>
