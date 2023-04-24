@@ -1,6 +1,6 @@
 <?php
 $xmlDoc=new DOMDocument();
-$xmlDoc->load("links.xml");
+$xmlDoc->load("w3example.xml");
 
 $x=$xmlDoc->getElementsByTagName('link');
 
@@ -13,7 +13,6 @@ if (strlen($q)>0) {
   for($i=0; $i<($x->length); $i++) {
     $y=$x->item($i)->getElementsByTagName('title');
     $z=$x->item($i)->getElementsByTagName('url');
-    $url = $x->item($i) -> getElementsByTagName('image');
     if ($y->item(0)->nodeType==1) {
       //find a link matching the search text
       if (stristr($y->item(0)->childNodes->item(0)->nodeValue,$q)) {
