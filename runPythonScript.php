@@ -1,6 +1,6 @@
 <?php
-$pythonPath = 'C:\Users\khs14\AppData\Local\Programs\Python\Python311\python.exe'; // Replace with the path to your Python interpreter
-$scriptPath = 'C:\xampp\htdocs\miniprojekt\TWSM-miniproject\DataToVid.py'; // Replace with the path to your Python script
+$pythonPath = '"C:\Users\madsw\AppData\Local\Programs\Python\Python39\python.exe"'; // Replace with the path to your Python interpreter
+$scriptPath = 'C:\xampp\htdocs\TWSM-miniproject\main.py'; // Replace with the path to your Python script
 
 $output = shell_exec($pythonPath . ' ' . $scriptPath);
 echo "<pre>$output</pre>";

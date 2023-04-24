@@ -60,3 +60,6 @@ def ImageMaker():
         # Increment the counter
         i += 1
 
+
+ImageMaker()
+
