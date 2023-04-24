@@ -1,3 +1,0 @@
-<h1>DEEZ NUTS</h1>
-<p>participant 2</p>
-<img src="img/IMG_20230112_112505.jpg" alt="Participant 1" width="500" height="500">
