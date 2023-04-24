@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- The following meta tag ensures proper rendering and scaling on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* This is the CSS class that defines the loading spinner animation */
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -13,15 +15,17 @@
   animation: spin 2s linear infinite;
   position:absolute;
   top: 40%;
-  left: 50%;
+  left: 47.5%;
 }
 
-/* Safari */
+/* This is the CSS animation that rotates the spinner */
+/* For Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
 
+/* For other browsers */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -32,6 +36,7 @@
 
 <h2>Loading...</h2>
 
+<!-- This div element displays the loading spinner using the "loader" class defined in the CSS -->
 <div class="loader"></div>
 
 </body>
