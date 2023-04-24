@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VR Heatmaps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="folders.css">
+  <script src="folder.js"></script>
+  </head>
+<body onload="loadImage()">
+
+<h2>Heatmap</h2>
+
+<div id="image-container"></div>
+
+<div id="data-container"></div>
+
+<div class="sidenav" id="sidenav">
+  <form>
+    <input type="text" size="15" onkeyup="showResult(this.value)" placeholder="Search">
+<div class="livesearch" id="livesearch"></div>
+  </form>
+  <a href="/html/main.html" class="dropdown-btn">Menu</a>
+</div>
+
+<script>
+function loadImage(){
+    // Load the XML file
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        // Get the URL of the image from the XML file
+        var xmlDoc = this.responseXML;
+        var url = xmlDoc.evaluate("/pages/link[@id='1']/image/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
+        var dataVal = xmlDoc.evaluate("/pages/link[@id='1']/stats/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
+        // Pass the URL to the img tag in the HTML code
+        var img = document.createElement("img");
+        img.src = url;
+        img.width = 345;
+        img.height = 304;
+        document.getElementById("image-container").appendChild(img);
+        document.getElementById("data-container").innerHTML = dataVal;
+    }
+};
+xhttp.open("GET", "links.xml", true);
+xhttp.send();
+}
+</script>
+
+</body>
+</html>
