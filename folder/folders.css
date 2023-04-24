@@ -17,7 +17,7 @@ body {
   }
   
   /* Style the sidenav links and the dropdown button */
-  .sidenav a, .dropdown-btn, .mainBtn, .input {
+  .sidenav a, .dropdown-btn, .mainBtn {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;

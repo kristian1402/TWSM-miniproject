@@ -9,19 +9,19 @@
 <body>
 
 <div id="demo">
-  <h2>Let AJAX change this text</h2>
+  <h2>Search for a heatmap in the sidebar</h2>
   <button type="button" onclick="loadDoc('image.txt')">Change Content</button>
 </div>
 
 <div class="sidenav" id="sidenav">
-  <a href="/html/main.html" class="dropdown-btn">Menu</a>
   <form>
+    <input type="text" size="15" onkeyup="showResult(this.value)" placeholder="Search">
+<div class="livesearch" id="livesearch"></div>
   </form>
-  <button class="dropdown-btn">Test 1</button>
+  <a href="/html/main.html" class="dropdown-btn">Menu</a>
+  <a href="ajaxTest.html" class="dropdown-btn">Test 1</a>
 </div>
 
-<input type="text" size="15" onkeyup="showResult(this.value)" placeholder="Search">
-<div id="livesearch"></div>
 
 <script>
   var dropdown = document.getElementsByClassName("dropdown-btn");
