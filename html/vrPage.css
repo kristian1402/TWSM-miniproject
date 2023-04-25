@@ -1,85 +1,63 @@
-/*----Globals----*/
+* {
+  box-sizing: border-box; /* include padding and border in element width */
+}
 
-/* Set the margin and background gradient for the entire page */
 body, html {
-  margin: 0rem;
+  margin: 0;
   background: rgb(255,189,249);
-  background: linear-gradient(90deg, rgba(255,189,249,1) 0%, rgba(0,255,254,1) 100%); 
-}
-
-/*----Text----*/
-
-/* Style the text section with centered alignment, font and color */
-.text {
+  background: linear-gradient(90deg, rgba(255,189,249,1) 0%, rgba(0,255,254,1) 100%);
   text-align: center;
-  width:600px;
-  margin:50px auto;
-  height:90px;
-  position:relative;
-  color:#000000;
-  text-shadow:rgba(0,0,0,0.1) 2px 2px 0px;
-  font-family: sans-serif;  
+  font-family: sans-serif;
+  padding: 0; /* remove default padding */
 }
 
-/* Remove the underline from links */
-a{
-  text-decoration:none; 
+.text {
+  margin-bottom: 25px; /* add margin-bottom to make room for the outer-div */
 }
 
-/*----Images----*/
-
-/* Set up the grid for the images with a minimum width of 200px and a gap of 1rem between them */
-.grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
-  margin: 0 0 1rem 0;
-}
-
-/* Set the height of each image container to 350px */
-.grid > div {
-  height: 350px;
-}
-
-/* Set the width and height of all other images to fill the container with cover and center positioning */
-.img img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.2s ease-in-out;
-  display: inline-block;
-}
-
-/* When hovering over an image, move it up 5px for an effect */
-.img img:hover {
-  transform: translateY(-5px);
-}
-
-/*----Text overlay----*/
-
-/* Set the position, size, font and color of the overlay text */
-.overlay{
+.outer-div {
+  height: 600px;
   position: relative;
-  top: -101%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: white;
-  font-size: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.5s, transform 0.2s ease-in-out;
+  background-color: rgba(0,0,0,0.75);
+  margin-top: 25px;
+  left: 0; /* set left to 0 to align with left edge of window */
+  right: 0; /* set right to 0 to align with right edge of window */
 }
 
-/* When hovering over an image, show the overlay text with a transition */
-.img:hover .overlay {
-  opacity: 1;
-  z-index: 1;
-  transform: translateY(-5px);
-  overflow:visible;
-  pointer-events:none;
+.inner-div {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 50%;
+  object-fit: cover;
+  display: inline-block;
+  background-color: transparent;
+}
+
+.inner-div-right {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 50%;
+  object-fit: cover;
+  display: inline-block;
+  background-color: transparent;
+}
+
+.inner-div img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.inner-div-right img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
 }
