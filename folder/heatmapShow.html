@@ -26,12 +26,12 @@
 ">Download Dataset</a>
 
 <div class="sidenav" id="sidenav">
-  <form>
-    <input type="text" size="20" onkeyup="showResult(this.value)" placeholder="Search">
-<div class="livesearch" id="livesearch"></div>
-  </form>
   <a href="../html/main.html" class="dropdown-btn">Main Menu</a>
-  <a href="heatmapShow.html" class="dropdown-btn">Preview</a>
+  <a href="../runPythonScript.php" class="dropdown-btn">Test 1</a>
+  <a href="heatmapShow.html" class="dropdown-btn">Test 2</a>
+  <a href="heatmapShow.html" class="dropdown-btn">Test 3</a>
+  <a href="heatmapShow.html" class="dropdown-btn">Test 4</a>
+  <a href="heatmapShow.html" class="dropdown-btn">Test 5</a>
 </div>
 
 <script>
@@ -42,8 +42,6 @@ xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         // Get the URL of the image from the XML file
         var xmlDoc = this.responseXML;
-        var linkElement = xmlDoc.evaluate("/pages/link[@id='1']", xmlDoc, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-        var xmlId = linkElement.getAttribute("id");
         var dataVal = xmlDoc.evaluate("/pages/link[@id='"+xmlId+"']/stats/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
         var vidUrl = xmlDoc.evaluate("/pages/link[@id='"+xmlId+"']/video/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
         // Pass the URL to the img tag in the HTML code
@@ -56,7 +54,6 @@ xhttp.onreadystatechange = function() {
         vid.height = screen.height/2;
         document.getElementById("video-container").appendChild(vid);
         document.getElementById("data-container").innerHTML = xmlId;
-        //document.getElementById("data-container").innerHTML = dataVal;
     }
 };
 xhttp.open("GET", "links.xml", true);
