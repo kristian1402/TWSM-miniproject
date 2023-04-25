@@ -36,6 +36,22 @@
 
 <h2>Loading...</h2>
 
+<div id="test"></div>
+
+<script type="text/javascript">
+  // Check if the page has loaded completely                                         
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("test").innerHTML = this.responseText;
+      }
+    };
+    request.open("GET","runPythonScript.php", true);
+    request.send();
+  }); 
+</script>
+
 <!-- This div element displays the loading spinner using the "loader" class defined in the CSS -->
 <div class="loader"></div>
 

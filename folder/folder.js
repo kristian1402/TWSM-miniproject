@@ -38,3 +38,18 @@ function showResult(str) {
   xmlhttp.open("GET","livesearch.php?q="+str,true);
   xmlhttp.send();
 }
+
+function runPhpScript() {
+  // Send the AJAX request to the PHP script
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // When the PHP script is done, update the website with the results
+      document.getElementById("resultDisplay").innerHTML = this.responseText;
+    }
+  };
+  xmlhttp.open("GET", "runPythonScript.php", true);
+  xmlhttp.send();
+}
+
+// Call the "runPhpScript" function when the page is loaded

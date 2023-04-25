@@ -13,7 +13,5 @@ $command = "{$pythonPath} {$scriptPath} {$title}";
 $output = shell_exec($command);
 
 // Output the result for debugging purposes
-echo "<pre>{$output}</pre>";
-$output = shell_exec($pythonPath . ' ' . $scriptPath . ' 2>&1');
-echo "<pre>$output</pre>";
+echo "Done";
 ?>
