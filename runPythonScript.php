@@ -1,5 +1,5 @@
 <?php
-$pythonPath = "C:\Users\khs14\AppData\Local\Programs\Python\Python311\python.exe"; // Replace with the path to your Python interpreter
+$pythonPath = "C:\Users\madsw\AppData\Local\Programs\Python\Python39\python.exe"; // Replace with the path to your Python interpreter
 $scriptPath = __DIR__ . '\DataToVid.py'; // Replace with the path to your Python script
 $existingXMLPath = __DIR__ . '\folder\links.xml'; // Path to existing XML file
 
