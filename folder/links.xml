@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <pages>
+
   <link id="1">
-    <title>Tester.csv</title>
+    <title>24-04-2023_10-25-31.csv</title>
     <url>heatmapShow.html</url>
-    <image>img/IMG_20230112_112505.jpg</image>
     <stats>Data gathered on 24/04/2023 - 15:47</stats>
     <video>../output.webM</video>
   </link>
 
-  <!--This is where the name of the csv should be saved to. Don't delete please.-->
-  <desiredString><nodeValue/></desiredString>
+  <link id="2">
+    <title>25-04-2023_07-51-54.csv</title>
+    <url>heatmapShow.html</url>
+    <stats>Data gathered on 24/04/2023 - 15:47</stats>
+    <video>../output.webM</video>
+  </link>
+
+  <link id="3">
+    <title>25-04-2023_07-52-32.csv</title>
+    <url>heatmapShow.html</url>
+    <stats>Data gathered on 24/04/2023 - 15:47</stats>
+    <video>../output.webM</video>
+  </link>
+
+  <link id="4">
+    <title>25-04-2023_07-52-57.csv</title>
+    <url>heatmapShow.html</url>
+    <stats>Data gathered on 24/04/2023 - 15:47</stats>
+    <video>../output.webM</video>
+  </link>
+  
+  <link id="5">
+    <title>25-04-2023_07-53-24.csv</title>
+    <url>heatmapShow.html</url>
+    <stats>Data gathered on 24/04/2023 - 15:47</stats>
+    <video>../output.webM</video>
+  </link>
 
 </pages>

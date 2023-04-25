@@ -42,8 +42,10 @@ xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         // Get the URL of the image from the XML file
         var xmlDoc = this.responseXML;
-        var dataVal = xmlDoc.evaluate("/pages/link[@id='1']/stats/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
-        var vidUrl = xmlDoc.evaluate("/pages/link[@id='1']/video/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
+        var linkElement = xmlDoc.evaluate("/pages/link[@id='1']", xmlDoc, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        var xmlId = linkElement.getAttribute("id");
+        var dataVal = xmlDoc.evaluate("/pages/link[@id='"+xmlId+"']/stats/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
+        var vidUrl = xmlDoc.evaluate("/pages/link[@id='"+xmlId+"']/video/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
         // Pass the URL to the img tag in the HTML code
         var vid = document.createElement("video");
         vid.controls = true;
@@ -53,7 +55,8 @@ xhttp.onreadystatechange = function() {
         vid.width = screen.width/2;
         vid.height = screen.height/2;
         document.getElementById("video-container").appendChild(vid);
-        document.getElementById("data-container").innerHTML = dataVal;
+        document.getElementById("data-container").innerHTML = xmlId;
+        //document.getElementById("data-container").innerHTML = dataVal;
     }
 };
 xhttp.open("GET", "links.xml", true);
