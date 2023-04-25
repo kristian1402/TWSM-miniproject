@@ -1,3 +1,8 @@
+import subprocess
+
+# Install required packages
+subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
+
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
