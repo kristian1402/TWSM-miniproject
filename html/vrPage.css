@@ -36,6 +36,17 @@ body, html {
   background-color: transparent;
 }
 
+.video-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0,0,0,0.75) url('play.png') no-repeat center center; */
+  /* background-size: 64px 64px; */
+  display: none;
+}
+
 .inner-div-right {
   position: absolute;
   top: 50%;
@@ -48,16 +59,17 @@ body, html {
   background-color: transparent;
 }
 
-.inner-div img {
+.inner-div video {
   display: block;
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
 }
 
-.inner-div-right img {
+.inner-div-right video {
   display: block;
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
 }
+
