@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 # Install required packages
 #subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
@@ -23,6 +24,10 @@ try:
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
     folder_path = 'tmpFiles'
+    isExist = os.path.exists(folder_path)
+    if not isExist:
+        os.makedirs(folder_path)
+
 except Exception as e:
     print(f"An error occurred while deleting old images: {e}")
 
