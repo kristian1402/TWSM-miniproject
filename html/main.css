@@ -45,6 +45,7 @@ a{
   object-fit: cover;
   object-position: center;
   transition: transform 0.2s ease-in-out;
+  display: inline-block;
 }
 
 .img img:hover {
