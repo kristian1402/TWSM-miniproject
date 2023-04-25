@@ -14,17 +14,6 @@
 
 <div id="data-container"></div>
 
-<br>
-
-<a href="../databaseConnect.php" style="
-  background-color: #481bda;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-">Download dataset</a>
-
 <div class="sidenav" id="sidenav">
   <form>
     <input type="text" size="20" onkeyup="showResult(this.value)" placeholder="Search">
@@ -50,8 +39,8 @@ xhttp.onreadystatechange = function() {
         vid.autoplay = true;
         vid.muted = true;
         vid.src = vidUrl;
-        vid.width = screen.width/2;
-        vid.height = screen.height/2;
+        vid.width = 345;
+        vid.height = 304;
         document.getElementById("video-container").appendChild(vid);
         document.getElementById("data-container").innerHTML = dataVal;
     }

@@ -9,11 +9,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import cv2
-from datetime import datetime
+import sys
 
-# Save current time, used for naming of files
-current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-print(current_time)
+# Get the first command-line argument as the input string
+input_string = sys.argv[1]
+input_string = input_string[1:-1]
+
+# Use the input string in your Python code
+print(f"Raw input string: {input_string}")
+
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -39,7 +43,11 @@ class Scrubber():
         print(SaveFile)
 
 
-Scrubber = Scrubber('tester.csv')
+try:
+    Scrubber = Scrubber(f"{input_string}")
+except Exception as e:
+    print(f"An error occurred while running Scrubber: {e}")
+print("hej")
 
 
 def ImageMaker():
