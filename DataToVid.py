@@ -13,25 +13,23 @@ import sys
 
 # Get the first command-line argument as the input string
 input_string = sys.argv[1]
-input_string = input_string[1:-1]
+#input_string = input_string[1:-1]
 
 # Use the input string in your Python code
 print(f"Raw input string: {input_string}")
+print(f"Formatted input string: {f'{input_string}'}")
+print(f"Is input string a string? {isinstance(input_string, str)}")
+try:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
 
-
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
-folder_path = 'tmpFiles'
-# Get a list of all file names in the directory
-file_list = os.listdir(folder_path)
-# Iterate over each file and delete old images, to ensure previously generated images won't interfere
-for file_name in file_list:
-    os.remove(os.path.join(folder_path, file_name))
+    folder_path = 'tmpFiles'
+except Exception as e:
+    print(f"An error occurred while deleting old images: {e}")
 
 
 class Scrubber():
-    def __init__(self, filename):
-        df = pd.read_csv(filename, delimiter=";", decimal=",")  # Read the data from csv file
+    def __init__(self):
+        df = pd.read_csv(input_string, delimiter=";", decimal=",")  # Read the data from csv file
         Px = df['X'].round(1)  # Round X to 1 decimal place
         Py = df['Z'].round(1)  # Round Z to 1 decimal place
         Positions = pd.concat([Px, Py], axis=1)  # Combine Px and Py into a DataFrame
@@ -42,9 +40,9 @@ class Scrubber():
         SaveFile.to_csv('TesterCleaned.csv', sep=';', header=header, index=False, float_format='%.1f')  # Save the DataFrame to a CSV file
         print(SaveFile)
 
-
+print("made it here")
 try:
-    Scrubber = Scrubber(f"{input_string}")
+    Scrubber = Scrubber()
 except Exception as e:
     print(f"An error occurred while running Scrubber: {e}")
 print("hej")
@@ -89,7 +87,10 @@ def ImageMaker():
 
         # Increment the counter
         i += 1
-ImageMaker()
+try:
+    ImageMaker()
+except Exception as e:
+    print(f"An error occurred while running imagemaker: {e}")
 def VideoMaker():
 
     # Set the name and fps of the output video

@@ -7,7 +7,7 @@ $existingXMLPath = __DIR__ . '\folder\links.xml'; // Path to existing XML file
 $title = (string) simplexml_load_file($existingXMLPath)->link[0]->title;
 
 // Construct the command to run the Python script with the title as an argument
-$command = "{$pythonPath} {$scriptPath} '{$title}'";
+$command = "{$pythonPath} {$scriptPath} {$title}";
 
 // Run the Python script using shell_exec()
 $output = shell_exec($command);
