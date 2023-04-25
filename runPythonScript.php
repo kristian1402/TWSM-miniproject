@@ -1,7 +1,7 @@
 <?php
-$pythonPath = 'C:\Users\madsw\AppData\Local\Programs\Python\Python39\python.exe'; // Replace with the path to your Python interpreter
-$scriptPath = 'C:\xampp\htdocs\TWSM-miniproject\DataToVid.py'; // Replace with the path to your Python script
-$existingXMLPath = 'C:\xampp\htdocs\TWSM-miniproject\folder\links.xml'; // Path to existing XML file
+$pythonPath = __DIR__ . '\TWSMenv\Scripts\python.exe'; // Replace with the path to your Python interpreter
+$scriptPath = __DIR__ . '\DataToVid.py'; // Replace with the path to your Python script
+$existingXMLPath = __DIR__ . '\folder\links.xml'; // Path to existing XML file
 
 // Load the XML document
 $xml = simplexml_load_file($existingXMLPath);
