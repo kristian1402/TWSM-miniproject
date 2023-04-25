@@ -81,7 +81,7 @@ ImageMaker()
 def VideoMaker():
 
     # Set the name and fps of the output video
-    video_name = 'output.mp4'
+    video_name = 'output.webm'
     fps = 5
 
     # Get a list of all the image filenames in the folder
@@ -95,7 +95,7 @@ def VideoMaker():
     height, width, layers = frame.shape
 
     # Create a VideoWriter object to write the frames to a video
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    fourcc = cv2.VideoWriter_fourcc(*'V','P','8','0')
     video = cv2.VideoWriter(video_name, fourcc, fps, (width, height))
 
     # Iterate over each image and add it to the video

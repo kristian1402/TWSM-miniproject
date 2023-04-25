@@ -10,13 +10,9 @@
 
 <h2>Heatmap</h2>
 
-<div id="image-container"></div>
+<div id="video-container"></div>
 
 <div id="data-container"></div>
-
-<video controls width="320" height="240" autoplay muted>
-  <source src="output.mp4" type="video/mp4">
-</video>
 
 <div class="sidenav" id="sidenav">
   <form>
@@ -35,24 +31,18 @@ xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         // Get the URL of the image from the XML file
         var xmlDoc = this.responseXML;
-        var url = xmlDoc.evaluate("/pages/link[@id='1']/image/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
-        //var dataVal = xmlDoc.evaluate("/pages/link[@id='1']/stats/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
+        var dataVal = xmlDoc.evaluate("/pages/link[@id='1']/stats/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
         var vidUrl = xmlDoc.evaluate("/pages/link[@id='1']/video/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
         // Pass the URL to the img tag in the HTML code
-        var img = document.createElement("img");
         var vid = document.createElement("video");
-        img.src = url;
-        img.width = 345;
-        img.height = 304;
         vid.controls = true;
         vid.autoplay = true;
         vid.muted = true;
         vid.src = vidUrl;
         vid.width = 345;
         vid.height = 304;
-        document.getElementById("image-container").appendChild(img);
-        //document.getElementById("data-container").innerHTML = dataVal;
-        document.getElementById("data-container").appendChild(vid);
+        document.getElementById("video-container").appendChild(vid);
+        document.getElementById("data-container").innerHTML = dataVal;
     }
 };
 xhttp.open("GET", "links.xml", true);
