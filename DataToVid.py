@@ -9,7 +9,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import cv2
+from datetime import datetime
 
+# Save current time, used for naming of files
+current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+print(current_time)
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <pages>
-  <link id='1'>
+  <link id="1">
     <title>Somme</title>
     <url>heatmapShow.html</url>
     <image>img/IMG_20230112_112505.jpg</image>
@@ -32,4 +32,8 @@
     <title>JavaScript Array Object</title>
     <url>https://www.w3schools.com/jsref/jsref_obj_array.asp</url>
   </link>
+
+  <!--This is where the name of the csv should be saved to. Don't delete please.-->
+  <desiredString><nodeValue>2023-04-25_13-57-02</nodeValue></desiredString>
+
 </pages>
