@@ -14,13 +14,24 @@
 
 <div id="data-container"></div>
 
+<br>
+
+<a href="../databaseConnect.php" style="
+  background-color: #332adb;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+">Download Dataset</a>
+
 <div class="sidenav" id="sidenav">
   <form>
     <input type="text" size="20" onkeyup="showResult(this.value)" placeholder="Search">
 <div class="livesearch" id="livesearch"></div>
   </form>
   <a href="../html/main.html" class="dropdown-btn">Main Menu</a>
-  <a href="heatmapShow.html" class="dropdown-btn">Show latest</a>
+  <a href="heatmapShow.html" class="dropdown-btn">Preview</a>
 </div>
 
 <script>
@@ -39,8 +50,8 @@ xhttp.onreadystatechange = function() {
         vid.autoplay = true;
         vid.muted = true;
         vid.src = vidUrl;
-        vid.width = 345;
-        vid.height = 304;
+        vid.width = screen.width/2;
+        vid.height = screen.height/2;
         document.getElementById("video-container").appendChild(vid);
         document.getElementById("data-container").innerHTML = dataVal;
     }
