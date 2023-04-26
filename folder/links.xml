@@ -5,30 +5,35 @@
     <title>24-04-2023_10-25-31.csv</title>
     <stats>Data gathered on 24/04/2023 - 10:25:31</stats>
     <video>../output.webM</video>
+    <db>24_04_2023_10_25_31</db>
   </link>
 
   <link id="2">
     <title>25-04-2023_07-51-54.csv</title>
     <stats>Data gathered on 25/04/2023 - 07:51:54</stats>
     <video>../output.webM</video>
+    <db>25_04_2023_07_51_54</db>
   </link>
 
   <link id="3">
     <title>25-04-2023_07-52-32.csv</title>
     <stats>Data gathered on 25/04/2023 - 07:52:32</stats>
     <video>../output.webM</video>
+    <db>25_04_2023_07_52_32</db>
   </link>
 
   <link id="4">
     <title>25-04-2023_07-52-57.csv</title>
     <stats>Data gathered on 25/04/2023 - 07:52:57</stats>
     <video>../output.webM</video>
+    <db>25_04_2023_07_52_57</db>
   </link>
   
   <link id="5">
     <title>25-04-2023_07-53-24.csv</title>
     <stats>Data gathered on 25/04/2023 - 07:53:24</stats>
     <video>../output.webM</video>
+    <db>25_04_2023_07_53_24</db>
   </link>
 
 </pages>

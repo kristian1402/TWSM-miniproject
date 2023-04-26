@@ -4,6 +4,11 @@ $username = "root";
 $password = "";
 $dbname = "csvfiles";
 
+$existingXMLPath = __DIR__ . '\folder\links.xml'; // Path to existing XML file
+
+$index = $_GET["index"];
+$title = (string) simplexml_load_file($existingXMLPath)->link[$index-1]->db;
+
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check connection
@@ -18,8 +23,9 @@ $headers = array("COL 1", "COL 2", "COL 3", "COL 4");
 mysqli_set_charset($conn, "utf8");
 ini_set('auto_detect_line_endings', true);
 
+
+$sql = "SELECT `" . implode("`, `", $headers) . "` FROM {$title}";
 // Perform a SQL query
-$sql = "SELECT `" . implode("`, `", $headers) . "` FROM tester";
 $result = mysqli_query($conn, $sql);
 
 // Check if the query was successful

@@ -18,7 +18,7 @@
 
 <br>
 
-  <a href="../databaseConnect.php" style="
+  <a href="../databaseConnect.php?index=0" style="
   background-color: #332adb;
   color: white;
   padding: 14px 25px;
@@ -26,8 +26,6 @@
   text-decoration: none;
   display: none;
 " id="downloader">Download Dataset</a>
-
-<div id="disseNuts"></div>
 
 
 <div class="sidenav" id="sidenav">
@@ -47,7 +45,6 @@ function idToPHP(buttonID){
   xhr.onreadystatechange = function() {
     if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
       loadVideo(buttonID);
-      document.getElementById("disseNuts").innerHTML = this.responseText;
     }
 }
 xhr.send();
@@ -68,6 +65,7 @@ xhttp.onreadystatechange = function() {
       videoContainer.innerHTML = vidHtml;
       document.getElementById("data-container").innerHTML = dataVal;
       document.getElementById("downloader").style.display = "inline-block";
+      document.getElementById("downloader").href = "../databaseConnect.php?index="+buttonID;
     }
   }
   xhttp.open("GET", "links.xml", true);
