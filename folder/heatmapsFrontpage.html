@@ -38,7 +38,7 @@
 </div>
 
 <script>
-function idToPHP(buttonID){
+  function idToPHP(buttonID){
   var myVariable = buttonID;
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "../runPythonScript.php?myVariable=" + encodeURIComponent(myVariable), true);
@@ -72,6 +72,5 @@ xhttp.onreadystatechange = function() {
   xhttp.send();
 }
 </script>
-
 </body>
 </html> 
