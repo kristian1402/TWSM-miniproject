@@ -11,6 +11,7 @@ body, html {
   padding: 0; /* remove default padding */
 }
 
+
 .text {
   margin-bottom: 25px; /* add margin-bottom to make room for the outer-div */
 }
@@ -73,3 +74,26 @@ body, html {
   margin: 0 auto;
 }
 
+.text-left {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  height: 250px;
+  width: 600px;
+  background-color: transparent;
+  color: whitesmoke;
+  text-align: right;
+}
+
+.text-right {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  height: 250px;
+  width: 600px;
+  background-color: transparent;
+  color: whitesmoke;
+  text-align: left;
+}
