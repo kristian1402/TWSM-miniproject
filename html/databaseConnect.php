@@ -18,8 +18,12 @@ $headers = array("COL 1", "COL 2", "COL 3", "COL 4");
 mysqli_set_charset($conn, "utf8");
 ini_set('auto_detect_line_endings', true);
 
-// The from should be a string which changes based on which dataset wants to be downloaded. having tester here makes it hard coded
-$sql = "SELECT `" . implode("`, `", $headers) . "` FROM tester";
+// Get the table name from an HTML user input
+$table_name = $_POST['table_name'];
+
+// Create the SQL query string using the data given by html to look up a predetermined file.
+$sql = "SELECT `" . implode("`, `", $headers) . "` FROM $table_name";
+
 $result = mysqli_query($conn, $sql);
 
 // make sure query was sucessfull
