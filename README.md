@@ -26,7 +26,7 @@
 -----------------------------------
 
 ----Navigating website----
-When all these requirements are met, the website should be able to run. Navigate to http://localhost/TWSM-miniproject/html/main.html to enter the main page. The right image leads to the heatmap vizualiser and the right leads to general info about our project.
+- When all these requirements are met, the website should be able to run. Navigate to http://localhost/TWSM-miniproject/html/main.html to enter the main page. The right image leads to the heatmap vizualiser and the right leads to general info about our project.
 - On the vizualizer portion of the website, users can click to run one of five tests. The page loads while python creates the video, and when it is done, the page updates with the corresponding Data.
 -----------------------------------
 
