@@ -13,7 +13,7 @@
 <div id="video-container"></div>
 
 <div id="data-container">
-  <p>Search for a heatmap in the sidebar, or click "Preview" to see how the page will look once a file has been loaded.</p>
+  <p>Click a test in the sidebar, and wait for the page to load.</p>
 </div>
 
 <br>
@@ -27,55 +27,51 @@
   display: none;
 " id="downloader">Download Dataset</a>
 
+<div id="disseNuts"></div>
+
 
 <div class="sidenav" id="sidenav">
   <a href="../html/main.html" class="dropdown-btn">Main Menu</a>
-  <button id="myButton" class="dropdown-btn">Test 1</button>
-  <a href="heatmapShow.html" class="dropdown-btn">Test 2</a>
-  <a href="heatmapShow.html" class="dropdown-btn">Test 3</a>
-  <a href="heatmapShow.html" class="dropdown-btn">Test 4</a>
-  <a href="heatmapShow.html" class="dropdown-btn">Test 5</a>
+  <button id="1" onclick="idToPHP(this.id)" class="dropdown-btn">Test 1</button>
+  <button id="2" onclick="idToPHP(this.id)" class="dropdown-btn">Test 2</button>
+  <button id="3" onclick="idToPHP(this.id)" class="dropdown-btn">Test 3</button>
+  <button id="4" onclick="idToPHP(this.id)" class="dropdown-btn">Test 4</button>
+  <button id="5" onclick="idToPHP(this.id)" class="dropdown-btn">Test 5</button>
 </div>
 
 <script>
-  // Add an event listener to the button
-  document.getElementById("myButton").addEventListener("click", function() {
-    // Send an AJAX request to the PHP script
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if (this.readyState === XMLHttpRequest.DONE && this.status === 200 && this.responseText == "Done") {
-        loadVideo()
-      }
+function idToPHP(buttonID){
+  var myVariable = buttonID;
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "../runPythonScript.php?myVariable=" + encodeURIComponent(myVariable), true);
+  xhr.onreadystatechange = function() {
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+      loadVideo(buttonID);
+      document.getElementById("disseNuts").innerHTML = this.responseText;
     }
-    xhr.open("GET", "../runPythonScript.php", true);
-    xhr.send();
-  });
+}
+xhr.send();
+}
 
-function loadVideo(){
+function loadVideo(buttonID){
     // Load the XML file
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        // Get the URL of the image from the XML file
-        var xmlDoc = this.responseXML;
-        var dataVal = xmlDoc.evaluate("/pages/link[@id='1']/stats/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
-        var vidUrl = xmlDoc.evaluate("/pages/link[@id='1']/video/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
-        // Pass the URL to the img tag in the HTML code
-        var vid = document.createElement("video");
-        var downloader = document.createElement("downloader");
-        vid.controls = true;
-        vid.autoplay = true;
-        vid.muted = true;
-        vid.src = vidUrl;
-        vid.width = screen.width/2;
-        vid.height = screen.height/2;
-        document.getElementById("video-container").appendChild(vid);
-        document.getElementById("data-container").innerHTML = dataVal;
-        document.getElementById("downloader").style.display = "inline-block";
+      // Get the URL of the image from the XML file
+      var xmlDoc = this.responseXML;
+      var dataVal = xmlDoc.evaluate("/pages/link[@id='"+buttonID+"']/stats/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
+      var vidUrl = xmlDoc.evaluate("/pages/link[@id='"+buttonID+"']/video/text()", xmlDoc, null, XPathResult.STRING_TYPE, null).stringValue;
+      // Pass the URL to the img tag in the HTML code
+      var videoContainer = document.getElementById("video-container");
+      var vidHtml = '<video controls autoplay muted width="' + screen.width/2 + '" height="' + screen.height/2 + '" src="' + vidUrl + '"></video>';
+      videoContainer.innerHTML = vidHtml;
+      document.getElementById("data-container").innerHTML = dataVal;
+      document.getElementById("downloader").style.display = "inline-block";
     }
-};
-xhttp.open("GET", "links.xml", true);
-xhttp.send();
+  }
+  xhttp.open("GET", "links.xml", true);
+  xhttp.send();
 }
 </script>
 
