@@ -23,5 +23,10 @@
 - Make sure to have downloaded Python.
 - Included in this repo is a .txt file called “Requirements.txt”, which contains the required Python packages for running the script. Some IDEs like PyCharm can read this file and install the packages automatically, otherwise they can be installed manually to your Python environment using pip install. 
 - The script “runPythonScript.php” contains a variable on line 2 entitled “$pythonPath”. This variable needs to be changed to the path to your local Python environment with the required packages installed.
+-----------------------------------
 
-When all these requirements are met, the website should be able to run. Navigate to http://localhost/TWSM-miniproject/html/main.html to enter the main page. 
+----Navigating website----
+When all these requirements are met, the website should be able to run. Navigate to http://localhost/TWSM-miniproject/html/main.html to enter the main page. The right image leads to the heatmap vizualiser and the right leads to general info about our project.
+- On the vizualizer portion of the website, users can click to run one of five tests. The page loads while python creates the video, and when it is done, the page updates with the corresponding Data.
+-----------------------------------
+
